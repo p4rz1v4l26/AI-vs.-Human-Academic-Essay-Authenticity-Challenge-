@@ -28,8 +28,17 @@ def predict(sentence):
         prediction = torch.argmax(logits, dim=1).item()
     return "AI" if prediction == 1 else "Human"
 
-# Streamlit App
-st.title("AI vs Human Academic Essay Classifier")
+col1, col2, col3 = st.columns([1, 2, 1])  
+with col2:  
+    st.image("logo.png", width=100)  
+
+st.markdown(
+    """
+    <h1 style="text-align: center;">Academic Essay Classifier</h1>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.write("Enter a sentence to check whether it's AI-generated or written by a human.")
 
 sentence = st.text_input("Enter a sentence:")
