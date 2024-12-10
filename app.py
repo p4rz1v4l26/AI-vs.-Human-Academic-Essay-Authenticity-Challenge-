@@ -2,6 +2,11 @@ import streamlit as st
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 
+st.set_page_config(
+    page_title="Academic Essay Classifier",
+    page_icon="logo.png",  
+)
+
 # Load the model and tokenizer
 @st.cache_resource
 def load_model():
