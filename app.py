@@ -11,7 +11,7 @@ st.set_page_config(
 @st.cache_resource
 def load_model():
     model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=2)
-    model.load_state_dict(torch.load("model_updated.pth", map_location=torch.device('cpu')))  
+    model.load_state_dict(torch.load("model.pth", map_location=torch.device('cpu')))  
     model.eval()
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     return model, tokenizer
